@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from .models import Task
 from .forms import TaskTrackerForm, TaskForm
 from django.contrib import messages 
-
+from .tasks import celery_task
 
 # Create your views here.
 def index(request):
@@ -37,3 +37,8 @@ def taskComplete(request):
             return redirect('task-complete')
     context = {'form': form}
     return render(request, "tasks/complete_task.html", context)
+
+def testMain(request):
+    for counter in range(2):
+        celery_task.delay(counter)
+    return HttpResponse("<h1>Loaded </h1>")

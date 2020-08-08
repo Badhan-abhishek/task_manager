@@ -25,7 +25,7 @@ SECRET_KEY = 'ckkbpjl#g)d_nkp-c!(h&*o!#mt#%ezswc89x*v8f+a_^&k$#1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -123,3 +123,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 STATIC_URL = '/static/'
+
+
+# Celery & rabbitmq configurations 
+
+# celery setting.
+CELERY_CACHE_BACKEND = 'default'
+
+# django setting.--RabbitMQ--
+CELERY_BROKER_URL = 'amqp://localhost'
