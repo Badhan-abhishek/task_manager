@@ -1,0 +1,32 @@
+{% extends 'tasks/base.html'%} {% block content %}
+<div class="tracker-main">
+  <div>
+    <form method="post">
+      {% csrf_token %}
+      <div class="type">
+        <label for="task_type">Select task type:</label>
+        {{form.task_type}}
+      </div>
+      <br />
+      <div class="update">
+        <label for="update_type">Enter task description:</label>
+        {{form.task_desc}}
+      </div>
+      <br />
+      <div class="submit_btn">
+        <input class="btn_submit" type="submit" value="Submit" />
+      </div>
+      {% for message in messages %} {% if message.tags == 'warning' %}
+      <div class="warning-msg">
+        {{message}}
+      </div>
+      {% else %}
+      <div class="success-msg">
+        {{message}}
+      </div>
+      {% endif %} {% endfor %}
+    </form>
+  </div>
+</div>
+
+{% endblock %}

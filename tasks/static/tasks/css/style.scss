@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+$main-color: #0058a2;
+
+$bg-color: #f0f0f083;
+
+$second-color: #e1bb00;
+
+$second-second-color: #01ab5d;
+
+$dark-text: #1b1d1f;
+
+$light-text: #a9a8a8;
+
+$light-bg: #e7e7e7;
+
+$light-icon: #adaeae;
+
+$border-color: #f0f0f0b6;
+
+body {
+  margin: 0;
+  top: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: $light-bg;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-wrapper {
+  .nav {
+    text-align: center;
+    background-color: $main-color;
+    padding: 1em;
+    a {
+      text-decoration: none;
+      border: 1px solid $border-color;
+      padding: 0.5em;
+      color: black;
+      border-radius: 3px;
+      &:hover {
+        background-color: $second-color;
+      }
+    }
+  }
+}
+
+.center-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 10%;
+}
+
+.do-task,
+.new-tracker {
+  font-size: 20px;
+  font-weight: 600;
+  color: $light-text;
+  &:hover {
+    color: $dark-text;
+  }
+}
+
+.tracker-main {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  .type,
+  .update,
+  .email,
+  .submit_btn {
+    width: 400px;
+  }
+}
+
+.tracker-main {
+  select,
+  input {
+    padding: 5px 0;
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+.email input {
+  width: 97%;
+}
+
+.btn_submit {
+  background-color: $second-color;
+  border: 1px solid $border-color;
+  padding: 0.7em 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background-color: #e1bb00a4;
+  }
+}
+
+.success-msg {
+  color: green;
+}
+
+.warning-msg {
+  color: red;
+}

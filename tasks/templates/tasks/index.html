@@ -1,0 +1,8 @@
+{% extends 'tasks/base.html'%} {% block content %}
+
+<div class="center-main">
+  <a href="{% url 'tracker' %}" class="new-tracker">Create new tracker</a>
+
+  <a href="{% url 'task-complete' %}" class="do-task">Complete a task</a>
+</div>
+{% endblock %}

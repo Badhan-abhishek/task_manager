@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'tasks/css/style.css' %}" />
+    <title>Tasks</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <div class="nav">
+        <a class="home-btn" href="/">Home</a>
+      </div>
+      <div>
+        {%block content%} {%endblock%}
+      </div>
+    </div>
+  </body>
+</html>

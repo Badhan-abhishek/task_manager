@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+body {
+  margin: 0;
+  top: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #e7e7e7;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-wrapper .nav {
+  text-align: center;
+  background-color: #0058a2;
+  padding: 1em;
+}
+
+.main-wrapper .nav a {
+  text-decoration: none;
+  border: 1px solid #f0f0f0b6;
+  padding: 0.5em;
+  color: black;
+  border-radius: 3px;
+}
+
+.main-wrapper .nav a:hover {
+  background-color: #e1bb00;
+}
+
+.center-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding-top: 10%;
+}
+
+.do-task,
+.new-tracker {
+  font-size: 20px;
+  font-weight: 600;
+  color: #a9a8a8;
+}
+
+.do-task:hover,
+.new-tracker:hover {
+  color: #1b1d1f;
+}
+
+.tracker-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 40px;
+}
+
+.tracker-main .type,
+.tracker-main .update,
+.tracker-main .email,
+.tracker-main .submit_btn {
+  width: 400px;
+}
+
+.tracker-main select,
+.tracker-main input {
+  padding: 5px 0;
+  width: 100%;
+  font-size: 16px;
+}
+
+.email input {
+  width: 97%;
+}
+
+.btn_submit {
+  background-color: #e1bb00;
+  border: 1px solid #f0f0f0b6;
+  padding: 0.7em 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn_submit:hover {
+  background-color: #e1bb00a4;
+}
+
+.success-msg {
+  color: green;
+}
+
+.warning-msg {
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */
