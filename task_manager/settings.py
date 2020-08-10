@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+# from tasks import tasks
+from celery import Celery
+from celery.schedules import crontab
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -125,10 +128,16 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 
 
-# Celery & rabbitmq configurations 
+# Celery & rabbitmq configurations
 
 # celery setting.
 CELERY_CACHE_BACKEND = 'default'
-
 # django setting.--RabbitMQ--
 CELERY_BROKER_URL = 'amqp://localhost'
+CELERY_TASK_ALWAYS_EAGER = True
+CELERY_BEAT_SCHEDULE = {
+    "daily_task": {
+        "task": "tasks.tasks.task_creator",
+        "schedule": crontab(minute="*/1"),
+    },
+}

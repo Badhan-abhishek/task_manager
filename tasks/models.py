@@ -1,10 +1,12 @@
 from django.db import models
 from datetime import date
+
+
 class Task(models.Model):
     task_choices = [
-        (1, 1), 
-        (2, 2), 
-        (3, 3), 
+        (1, 1),
+        (2, 2),
+        (3, 3),
         (4, 4)
     ]
     task_type = models.IntegerField(choices=task_choices)
@@ -13,12 +15,13 @@ class Task(models.Model):
 
     def __str__(self):
         num = str(self.task_type)
-        return "Task " + num
+        return "Task  " + num
+
 
 class TaskTracker(models.Model):
     update_choices = [
-        ('Daily', 'Daily'), 
-        ('Weekly', 'Weekly'), 
+        ('Daily', 'Daily'),
+        ('Weekly', 'Weekly'),
         ('Monthly', 'Monthly')
     ]
     task_type = models.ForeignKey(Task, on_delete=models.CASCADE)
