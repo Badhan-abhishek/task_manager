@@ -137,7 +137,16 @@ CELERY_BROKER_URL = 'amqp://localhost'
 CELERY_TASK_ALWAYS_EAGER = True
 CELERY_BEAT_SCHEDULE = {
     "daily_task": {
-        "task": "tasks.tasks.task_creator",
-        "schedule": crontab(minute="*/1"),
+        "task": "tasks.tasks.daily_task",
+        "schedule": crontab(minute=0,
+                            hour='17'),
+    },
+    "weekly_task_gen": {
+        "task": "tasks.tasks.weekly_task_gen",
+        "schedule": crontab(day_of_week=1),
+    },
+    "monthly_task": {
+        "task": "tasks.tasks.monthly_task",
+        "schedule": crontab(day_of_month=1),
     },
 }
