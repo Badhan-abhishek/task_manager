@@ -11,7 +11,7 @@ class Task(models.Model):
     ]
     task_type = models.IntegerField(choices=task_choices)
     task_desc = models.CharField(max_length=250, null=True)
-    task_date = models.DateField(auto_now_add=True, null=True)
+    task_date = models.DateField(null=True) # auto_now_add=True
 
     def __str__(self):
         num = str(self.task_type)
